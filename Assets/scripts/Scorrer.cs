@@ -8,7 +8,10 @@ public class Scorrer : MonoBehaviour
     private void OnCollisionEnter(Collision other)
 
     {
-        hits++;
+        if (!other.gameObject.CompareTag("hit"))
+        {
+            hits++;
+        }
         Debug.Log("You 've hit wall this many times: " + hits);
     }
 }
